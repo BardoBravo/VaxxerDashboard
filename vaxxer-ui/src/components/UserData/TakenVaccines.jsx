@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import Popup from 'reactjs-popup';
+import VaccineTracking from './Tracking';
 import TrackImage from '../../images/tracking_small.jpg';
 import CertifyImage from './../../images/certify_small.png';
+import Tracking from './Tracking';
 
 
 class TakenVaccines extends Component {
@@ -19,7 +22,12 @@ class TakenVaccines extends Component {
                         <td padding= "15px">Diphteria</td>
                         <td padding= "15px">#ABC123</td>
                         <td>12/12/2012</td>
-                        <td><img src={TrackImage} alt="track" style={{width: '20%' }} /></td>
+                        <td>
+                            <Popup trigger={<input type="image" src={TrackImage} style={{ width: '20%' }}></input>} position="top center">
+                                <Tracking />
+                                {/* <img src={TrackImage} alt="track" style={{width: '20%' }} /> */}
+                            </Popup>                            
+                        </td>
                         <td><img src={CertifyImage} alt="track" style={{width: '50%'}}/></td>
                     </tr>
                     <tr align="center">
